@@ -1,5 +1,6 @@
 const movies = [
   {
+    id: 1,
     title: "Jungle Cruise",
     genre: "Adventure",
     director: "Spilberg",
@@ -19,5 +20,6 @@ exports.getAll = () => {
 
 exports.create = (movieData) => {
   console.log("Adding new movie:", movieData);
+  movieData._id = movies[movies.length - 1]._id;
   movies.push(movieData);
 };

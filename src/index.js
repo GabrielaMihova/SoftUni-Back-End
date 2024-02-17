@@ -1,5 +1,6 @@
 const express = require("express");
 
+require("./hbs helpers/hbsHelpers");
 const configHandlebars = require("./config/configHandlebars");
 const configExpress = require("./config/configExpress");
 const routes = require("./routes/routes");

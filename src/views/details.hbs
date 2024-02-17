@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="second-info">
                                     <p class="card-year">Year: {{movieData.date}}</p>
-                                    <p class="card-ranking">Rating: <span id="stars">{{movieData.rating}}</span></p>
+<p class="card-ranking">Rating: <span id="stars">{{{renderStars rating}}}</span></p>
                                 </div>
 
                             </div>
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="card_right">
-                        <img src="/img/the-little-mermaid.jpg"
+                        <img src={{movieData.imageUrl}}
                             alt="image">
                     </div>
                 </div>

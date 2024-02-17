@@ -39,7 +39,7 @@
                 <h1>{{title}}</h1>
                 <h2>Genre: {{genre}}</h2>
                 <p>{{description}}</p>
-                <a href="/movies/{{_id}}" class="details">Details</a>
+                <a href="/details?id={{_id}}&title={{title}}&genre={{genre}}&director={{director}}&date={{date}}&imageUrl={{imageUrl}}&rating={{rating}}&description={{description}}" class="details">Details</a>
               </div>
             </div>
             {{else}}

@@ -8,6 +8,21 @@ router.get("/", (req, res) => {
 
 module.exports = router;
 
+router.get("/details", (req, res) => {
+  const movieData = {
+    id: req.query.id,
+    title: req.query.title,
+    genre: req.query.genre,
+    director: req.query.director,
+    date: req.query.date,
+    imageUrl: req.query.imageUrl,
+    rating: req.query.rating,
+    description: req.query.description
+  };
+  
+  res.render("details", { layout: false, movieData: movieData });
+});
+
 router.get("/about", (req, res) => {
   res.render("about", { layout: false });
 });

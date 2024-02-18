@@ -17,9 +17,9 @@ router.get("/details", (req, res) => {
     date: req.query.date,
     imageUrl: req.query.imageUrl,
     rating: req.query.rating,
-    description: req.query.description
+    description: req.query.description,
   };
-  
+
   res.render("details", { layout: false, movieData: movieData });
 });
 
@@ -40,6 +40,10 @@ router.post("/create", async (req, res) => {
     console.error("Error creating movie:", error);
     res.status(500).send("An error occurred while creating the movie.");
   }
+});
+
+router.get("/search", (req, res) => {
+  res.render("search", { layout: false });
 });
 
 router.get("*", (req, res) => {

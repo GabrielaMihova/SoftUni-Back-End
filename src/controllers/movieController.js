@@ -10,9 +10,7 @@ router.post("/create", (req, res) => {
   const newMovie = req.body;
   movieService.create(newMovie);
 
-  const rating = parseInt(newMovie.rating, 10);
-
-  newMovie.ratingStars = "&#x2605;".repeat(rating);
+  newMovie.ratingStars = "&#x2605;".repeat(Number(newMovie.rating));
 
   console.log("New movie with ratingStars:", newMovie);
 

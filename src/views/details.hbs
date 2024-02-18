@@ -24,7 +24,6 @@
 
         </nav>
 
-
         <main>
 
             <section id="details-page">
@@ -36,35 +35,38 @@
                             <h1>{{movieData.title}}</h1>
                             <div class="card-movie">
                                 <div class="first-info">
-                                    <p class="card-genre">Genre: {{movieData.genre}}</p>
-                                    <p class="card-director">Directror: {{movieData.director}}</p>
+                                    <p class="card-genre">Genre:
+                                        {{movieData.genre}}</p>
+                                    <p class="card-director">Directror:
+                                        {{movieData.director}}</p>
                                 </div>
                                 <div class="second-info">
-                                    <p class="card-year">Year: {{movieData.date}}</p>
-<p class="card-ranking">Rating: <span id="stars">{{{renderStars rating}}}</span></p>
+                                    <p class="card-year">Year:
+                                        {{movieData.date}}</p>
+                                    <p class="card-ranking">Rating: <span id="stars">{{#each
+                                            movieData.ratingStars}}&#x2605;{{/each}}</span></p>
+                                    <p class="card-ranking"><span id="stars"></span></p>
+
+                                    <script>
+                                        const starsContainer = document.getElementById('stars');
+                                        const rating = {{ movieData.rating }};
+                                        const stars = '&#x2605;'.repeat(Number(rating));
+                                        starsContainer.innerHTML = stars;
+                                    </script>
+
                                 </div>
 
                             </div>
 
-                            <p class="disc">Description: {{movieData.description}}</p>
+                            <p class="disc">Description:
+                                {{movieData.description}}</p>
                         </div>
                     </div>
                     <div class="card_right">
-                        <img src={{movieData.imageUrl}}
-                            alt="image">
+                        <img src={{movieData.imageUrl}} alt="image">
                     </div>
                 </div>
 
             </section>
 
         </main>
-
-
-        <footer>
-            © JS Back-End Workshop
-        </footer>
-    </div>
-
-</body>
-
-</html>
